@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>email creator</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <head>
+        <div class="m-auto text-center p-2 bg-dark text-light">
+            <h3>Email generator address</h3>
+        </div>
+    </head>
+    <main>
+        <form class="w-50 m-auto pt-5 pb-5 needs-validation" novalidate>
+            <div class="form-group">
+                <label for="email-address">Receipient email: </label>
+                <input type="email" class="form-control" id="email-address" required>
+                <div class="invalid-feedback">
+                    Valid email needed.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email-title">Email title: </label>
+                <input type="text" class="form-control" id="email-title" required>
+                <div class="invalid-feedback">
+                    Email title cannot be empty.
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="media-found">Opportunity found in: </label>
+                <select name="media-found" id="media-found" class="form-control">
+                    <option value="1">IT Recruitment Hub</option>
+                    <option value="2">IT Jobs Forum Philippines</option>
+                    <option value="3">Programmers Hub PH</option>
+                    <option value="4">IT Job Hiring</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="extra-notes">Extra notes:</label>
+                <textarea name="extra-notes" id="extra-notes" class="form-control" cols="30" rows="3"></textarea>
+            </div>
+            <div class="resume-opt-container mb-2">
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" name="resume-option" id="default-resume" value="1" checked="checked">
+                    <label class="form-check-label" for="default-resume">Default resume</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" name="resume-option" id="upload" value="2">
+                    <label class="form-check-label" for="upload">Upload resume</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="default-email-body">Default email body: </label>
+                <textarea name="email-body" id="default-email-body" cols="30" rows="8" class="form-control" disabled>Hi, &#13;&#13;I am interested in the job opportunity that you have posted in Facebook &lt;group&gt; group for the position: &lt;position&gt;. &#13;I have attached a copy of my resume for you to review. &#13;&#13;Thank you.
+                </textarea>
+            </div>
+            <div class="display-final form-group" id="display-final">
+                <label for="final-email">Email output: </label>
+                <textarea class="form-control" id="final-output" cols="30" rows="8" disabled></textarea>
+            </div>
+            <button class="btn btn-success" id="generate-button">Generate</button>
+        </form>
+    </main>
+    <footer class="m-auto text-center p-2 bg-dark text-light">
+        <small>Copyright &copy; 2019 &verbar; jcapagcuan</small>
+    </footer>
+    <script src="./assets/js/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+html, body{
+    min-width: 100%;
+    min-height: 100%;
+}
+.display-final{
+    display: none;
+}
