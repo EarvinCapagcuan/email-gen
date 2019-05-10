@@ -1,4 +1,5 @@
 const generateButton = document.getElementById('generate-button');
+const sendButton = document.getElementById('send-button');
 const emailAddress = document.getElementById('email-address');
 const emailTitle = document.getElementById('email-title');
 const sourceMedia = document.getElementById('media-found');
@@ -10,11 +11,13 @@ const outputBox = document.getElementById('final-output');
 const output = [];
 
 generateButton.addEventListener('click', (e) => {
-
-    let newEmail = defaultEmail.value;
-    let sourceText = [];
-    let notes = extraNotes.value ? true : false;
-    let allData = [
+    e.preventDefault();
+    e.stopPropagation();
+    
+    var newEmail = defaultEmail.value;
+    var sourceText = [];
+    var notes = extraNotes.value ? true : false;
+    var allData = [
         emailAddress.value,
         emailTitle.value,
         sourceMedia.value,
@@ -34,7 +37,7 @@ generateButton.addEventListener('click', (e) => {
 
     console.log(allData);
 
-    const finalText = ``;
+    var finalText = ``;
 
     newEmail = newEmail.replace('<position>', emailTitle.value);
     newEmail = newEmail.replace('<group>', sourceText[sourceMedia.value]);
@@ -43,7 +46,14 @@ generateButton.addEventListener('click', (e) => {
 
     final.style.display = "block";
     outputBox.innerHTML = newEmail;
+
+    if (confirm(`Would you like to send the message: \n\n${newEmail}`)) {
+        window.location.href = `mailto:${emailAddress.value}?subject=${emailTitle.value}&body=${newEmail}`;
+    }
+
 });
+
+
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
